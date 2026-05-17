@@ -113,7 +113,8 @@ def create_app():
         return jsonify({"error": "Internal server error"}), 500
 
     return app
-
+# Create app for Vercel
+app = create_app()
 
 if __name__ == "__main__":
     # Initialize DB first
