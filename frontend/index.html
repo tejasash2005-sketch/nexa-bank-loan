@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NexaBank Pro — AI Loan Portal</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+
+<!-- ─── APP SHELL ─── -->
+<div id="app">
+
+  <!-- LANDING PAGE -->
+  <div id="page-landing">
+    <nav class="navbar">
+      <div class="nav-logo">🏦 NexaBank Pro</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#loans-section">Loans</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="showPage('login')">Login</button>
+        <button class="btn btn-primary" onclick="showPage('register')">Get Started</button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-badge">✦ TRUSTED BY 2M+ CUSTOMERS · RBI REGISTERED NBFC</div>
+      <h1 class="hero-title">Smart Loans.<br>Instant <span class="gradient-text">AI Approvals.</span></h1>
+      <p class="hero-sub">Apply for any of 20 loan types in minutes. AI-powered decisions.<br>Transparent process. Zero hidden fees. 15 Languages.</p>
+      <div class="hero-actions">
+        <button class="btn btn-hero" onclick="showPage('register')">🚀 Apply Now — Free</button>
+        <button class="btn btn-hero-outline" onclick="showPage('login')">🔐 Login to Portal</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num">₹50,000Cr+</span><span class="hero-stat-lbl">Disbursed</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">2M+</span><span class="hero-stat-lbl">Customers</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">98%</span><span class="hero-stat-lbl">Accuracy</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">&lt;5 min</span><span class="hero-stat-lbl">Decision</span></div>
+      </div>
+    </section>
+
+    <!-- LOAN TYPES GRID -->
+    <section id="loans-section" class="section">
+      <div class="section-label">20 LOAN PRODUCTS</div>
+      <h2 class="section-title">Solutions for Every Need</h2>
+      <div id="landing-loans-grid" class="loans-grid"></div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section section-blue">
+      <div class="section-label" style="color:rgba(255,255,255,0.7)">WHY NEXABANK PRO</div>
+      <h2 class="section-title" style="color:white">Built for the Future of Banking</h2>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">🤖</div><h3>AI-Powered Decisions</h3><p>Random Forest model with 29 parameters delivers 98% accurate approvals in seconds.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">🔒</div><h3>Bank-Grade Security</h3><p>256-bit encryption, bcrypt hashing, JWT auth, OTP KYC verification.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">🌐</div><h3>15 Languages</h3><p>Apply in your native language. Full multilingual support across Indian & global languages.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">📊</div><h3>Live Analytics</h3><p>Real-time dashboard with charts, EMI schedules, credit radar, and amortization.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">💳</div><h3>EMI Management</h3><p>Pay EMIs, track payment history, get receipts, pre-closure calculator.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:rgba(255,255,255,0.15)">🛡️</div><h3>Insurance & Savings</h3><p>Loan protection plans, savings goal planner, compound interest projections.</p></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="about-card">
+        <div class="about-content">
+          <div class="section-label">ABOUT NEXABANK PRO</div>
+          <h2>India's Leading AI-Powered Lending Platform</h2>
+          <p>NexaBank Pro combines cutting-edge machine learning with deep financial expertise to deliver lightning-fast, fair, and transparent loan approvals across 20 loan categories. Our proprietary AI model analyses 29 financial parameters in real-time with RBI-compliant processes.</p>
+          <div class="about-stats">
+            <div><strong>2016</strong><span>Founded</span></div>
+            <div><strong>20+</strong><span>Loan Products</span></div>
+            <div><strong>15</strong><span>Languages</span></div>
+            <div><strong>RBI</strong><span>Registered NBFC</span></div>
+          </div>
+        </div>
+        <div class="about-visual">🏦</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-label">CONTACT US</div>
+      <h2 class="section-title">We're Here 24×7</h2>
+      <div class="contact-grid">
+        <div class="contact-card"><span class="contact-icon">📞</span><strong>Phone</strong><span>1800-200-3000 (Toll Free)</span></div>
+        <div class="contact-card"><span class="contact-icon">📧</span><strong>Email</strong><span>support@nexabank.in</span></div>
+        <div class="contact-card"><span class="contact-icon">🏢</span><strong>Headquarters</strong><span>NexaBank Tower, BKC, Mumbai</span></div>
+        <div class="contact-card"><span class="contact-icon">🕐</span><strong>Hours</strong><span>24 × 7 Support Available</span></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <h2>Ready to Apply? Get Started Today.</h2>
+      <p>Join 2 million+ customers who trust NexaBank Pro for their financial needs.</p>
+      <button class="btn btn-hero" onclick="showPage('register')">🚀 Open Free Account</button>
+    </section>
+
+    <footer class="footer">
+      <div>© 2025 NexaBank Pro Financial Services Pvt. Ltd. | RBI Registered NBFC | 15 Languages | 20 Loan Types</div>
+      <div style="margin-top:8px;font-size:12px;opacity:0.6">Powered by AI · Built with Flask + JWT · Secured by bcrypt</div>
+    </footer>
+  </div><!-- /landing -->
+
+  <!-- AUTH PAGES -->
+  <div id="page-login" class="auth-page hidden">
+    <div class="auth-container">
+      <button class="back-btn" onclick="showPage('landing')">← Back</button>
+      <div class="auth-card">
+        <div class="auth-logo">🏦</div>
+        <h2 class="auth-title">Welcome Back</h2>
+        <p class="auth-sub">Sign in to your NexaBank account</p>
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>👤 Username</label>
+            <input type="text" id="login-username" placeholder="Enter your username" required/>
+          </div>
+          <div class="form-group">
+            <label>🔑 Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required/>
+          </div>
+          <div id="login-error" class="error-msg hidden"></div>
+          <button type="submit" class="btn btn-primary btn-full" id="login-btn">
+            <span class="btn-text">🚀 Login</span>
+            <span class="btn-loader hidden">⏳ Logging in…</span>
+          </button>
+        </form>
+        <div class="auth-demo">
+          <div class="demo-title">🔑 Demo Credentials</div>
+          <div>👤 Admin: <code>admin</code> / <code>admin123</code></div>
+          <div>👤 User: &nbsp;<code>user</code> / <code>user123</code></div>
+        </div>
+        <p class="auth-switch">Don't have an account? <a onclick="showPage('register')">Create one →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-register" class="auth-page hidden">
+    <div class="auth-container">
+      <button class="back-btn" onclick="showPage('landing')">← Back</button>
+      <div class="auth-card">
+        <div class="auth-logo">🏦</div>
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-sub">Join NexaBank Pro — Free Forever</p>
+        <form id="register-form" onsubmit="handleRegister(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>👤 Full Name</label>
+              <input type="text" id="reg-name" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label>🔵 Username</label>
+              <input type="text" id="reg-username" placeholder="john_doe" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>📧 Email</label>
+            <input type="email" id="reg-email" placeholder="john@example.com" required/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>📱 Phone</label>
+              <input type="text" id="reg-phone" placeholder="+91 9876543210"/>
+            </div>
+            <div class="form-group">
+              <label>🔑 Password</label>
+              <input type="password" id="reg-password" placeholder="Min 6 characters" required/>
+            </div>
+          </div>
+          <div id="reg-error" class="error-msg hidden"></div>
+          <button type="submit" class="btn btn-primary btn-full" id="reg-btn">
+            <span class="btn-text">✨ Create Free Account</span>
+            <span class="btn-loader hidden">⏳ Creating…</span>
+          </button>
+        </form>
+        <p class="auth-switch">Already have an account? <a onclick="showPage('login')">Login →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER PORTAL -->
+  <div id="page-user" class="portal hidden">
+    <div class="sidebar" id="user-sidebar">
+      <div class="sidebar-logo">🏦 NexaBank Pro</div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon">👤</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-username">User</div>
+          <div class="sidebar-badge badge-user">CUSTOMER</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" onclick="userNav('apply')" data-page="apply">🏠 Apply for Loan</button>
+        <button class="nav-item" onclick="userNav('docs')" data-page="docs">📁 Document Center</button>
+        <button class="nav-item" onclick="userNav('checklist')" data-page="checklist">📋 Doc Checklist</button>
+        <button class="nav-item" onclick="userNav('emi-calc')" data-page="emi-calc">🧮 EMI Calculator</button>
+        <button class="nav-item" onclick="userNav('compare')" data-page="compare">⚖️ Compare Loans</button>
+        <button class="nav-item" onclick="userNav('credit')" data-page="credit">📊 Credit Score Booster</button>
+        <button class="nav-item" onclick="userNav('kyc')" data-page="kyc">🔐 KYC Verification</button>
+        <button class="nav-item" onclick="userNav('payments')" data-page="payments">💳 EMI Payments</button>
+        <button class="nav-item" onclick="userNav('loans')" data-page="loans">📄 My Loans</button>
+        <button class="nav-item" onclick="userNav('notifications')" data-page="notifications">
+          🔔 Notifications <span class="notif-badge" id="notif-count" style="display:none">0</span>
+        </button>
+        <button class="nav-item" onclick="userNav('eligibility')" data-page="eligibility">🏦 Eligibility Check</button>
+        <button class="nav-item" onclick="userNav('preclosure')" data-page="preclosure">📈 Pre-Closure Calc</button>
+        <button class="nav-item" onclick="userNav('support')" data-page="support">🆘 Support Tickets</button>
+        <button class="nav-item" onclick="userNav('savings')" data-page="savings">💹 Savings Planner</button>
+        <button class="nav-item" onclick="userNav('insurance')" data-page="insurance">🛡️ Insurance</button>
+        <button class="nav-item" onclick="userNav('profile')" data-page="profile">⚙️ Profile Settings</button>
+      </nav>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+    <div class="main-content" id="user-main">
+      <!-- Dynamic content loaded here -->
+    </div>
+  </div>
+
+  <!-- ADMIN PORTAL -->
+  <div id="page-admin" class="portal hidden">
+    <div class="sidebar sidebar-admin" id="admin-sidebar">
+      <div class="sidebar-logo">🏦 NexaBank Pro</div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon">🛠</div>
+        <div>
+          <div class="sidebar-user-name" id="admin-sidebar-username">Admin</div>
+          <div class="sidebar-badge badge-admin">ADMINISTRATOR</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" onclick="adminNav('dashboard')" data-page="dashboard">📊 Dashboard</button>
+        <button class="nav-item" onclick="adminNav('applications')" data-page="applications">📋 Loan Applications</button>
+        <button class="nav-item" onclick="adminNav('kyc')" data-page="kyc">🔐 KYC Records</button>
+        <button class="nav-item" onclick="adminNav('payments')" data-page="payments">💳 Payment Records</button>
+        <button class="nav-item" onclick="adminNav('users')" data-page="users">👥 User Management</button>
+        <button class="nav-item" onclick="adminNav('analytics')" data-page="analytics">📈 Analytics</button>
+        <button class="nav-item" onclick="adminNav('tickets')" data-page="tickets">🆘 Support Queue</button>
+        <button class="nav-item" onclick="adminNav('audit')" data-page="audit">📜 Audit Log</button>
+      </nav>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+    <div class="main-content" id="admin-main">
+      <!-- Dynamic content loaded here -->
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="toast hidden"></div>
+
+<!-- MODAL -->
+<div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+  <div id="modal-box" class="modal-box" onclick="event.stopPropagation()">
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="pages/config.js"></script>
+<script src="pages/api.js"></script>
+<script src="pages/auth.js"></script>
+<script src="pages/user-apply.js"></script>
+<script src="pages/user-loans.js"></script>
+<script src="pages/user-tools.js"></script>
+<script src="pages/admin.js"></script>
+<script src="pages/app.js"></script>
+</body>
+</html>
