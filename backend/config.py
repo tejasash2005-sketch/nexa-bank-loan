@@ -13,7 +13,7 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES  = timedelta(hours=8)
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)
 
-    DATABASE_PATH = "/tmp/nexabank.db"
+    DATABASE_PATH = os.path.join(ROOT_DIR, "database", "nexabank.db")
     MODEL_DIR     = os.path.join(ROOT_DIR, "model")
     UPLOAD_DIR    = os.path.join(ROOT_DIR, "backend", "uploads")
 
